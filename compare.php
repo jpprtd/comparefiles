@@ -320,12 +320,13 @@ include("Connect.php");
                 contentType: false,
                 cache: false,
                 success:function(response){
-                  console.log(response);
+				  var obj = JSON.parse(response);
                   $("#input_file_txt").val('');
                   $("#my_file").val('');
                   $("#submit_btn").attr("disabled", 'disabled');
                   $("#coverScreen").hide();
-				  if(response['compare'] == "1"){
+				  console.log(obj.compare);
+				  if(obj.compare === 1){
 					alert("ไฟล์ทั้งสองมีค่า Hash ตรงกัน");
 				  }else{
 					alert("ไฟลทั้งสองมีค่า Hash ไม่ตรงกัน");

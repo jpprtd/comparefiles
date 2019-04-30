@@ -34,8 +34,6 @@ if (!empty($_FILES)) {
 			$sql = "INSERT INTO files (files_name , files_hash , user_id) VALUES ('$fname','$files_hash','$id')";
 			mysqli_query($conn,$sql);
 			
-			echo $result."-----";
-			echo $files_hash;
 			if($result == $files_hash){
 				$response['compare'] = 1;
 			}else{
